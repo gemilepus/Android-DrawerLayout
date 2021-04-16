@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
                 float slideX = drawerView.getWidth() * slideOffset;
-//                content.setTranslationX(slideX);
-//                toolbar.setTranslationX(slideX);
-//
-//                //mNavigationView.getHeaderView(0).setTranslationX(mNavigationView.getWidth() - drawerView.getWidth() * slideOffset) ;
-//                mNavigationView.findViewById(R.id.nav_head).setTranslationX((float)300  - 300* (slideX/mNavigationView.getWidth())) ;
+                content.setTranslationX(slideX);
+                toolbar.setTranslationX(slideX);
+
+                //mNavigationView.getHeaderView(0).setTranslationX(mNavigationView.getWidth() - drawerView.getWidth() * slideOffset) ;
+                mNavigationView.findViewById(R.id.nav_head).setTranslationX((float)300  - 300* (slideX/mNavigationView.getWidth())) ;
 
             }
         };
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
